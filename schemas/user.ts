@@ -35,7 +35,7 @@ export default {
           to: [{type: 'user'}],
         },
       ],
-      validation: (Rule: Rule) => Rule.unique(),
+      validation: (rule: Rule) => rule.unique(),
     },
     {
       title: 'Followers',
@@ -47,19 +47,25 @@ export default {
           to: [{type: 'user'}],
         },
       ],
-      validation: (Rule: Rule) => Rule.unique(),
+      validation: (rule: Rule) => rule.unique(),
     },
     {
       title: 'Bookmarks',
       name: 'bookmarks',
-      ype: 'array',
+      type: 'array',
       of: [
         {
           type: 'reference',
-          to: [{type: 'post'}],
+          to: [{type: 'user'}],
         },
       ],
-      validation: (Rule: Rule) => Rule.unique(),
+      validation: (rule: Rule) => rule.unique(),
     },
   ],
+  preview: {
+    select: {
+      title: 'name',
+      subtitle: 'username',
+    },
+  },
 }
